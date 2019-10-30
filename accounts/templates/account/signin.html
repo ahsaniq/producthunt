@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<title>Sign in | Product Clone</title>
+<div class="container bg-light shadow-sm">
+  <br/>
+  <h3>Sign In</h3>
+  <hr/>
+  <br/>
+
+  {% if error %}
+  {{ error }}
+  {% endif %}
+
+  <form class="" action="{% url 'signin' %}" method="POST">
+    {% csrf_token %}
+    <label >Username</label>
+    <input type="text" class="form-control" name="username" value="">
+    <br/>
+    <label >Password</label>
+    <input type="password" class="form-control" name="pass" value="">
+    <br/>
+    <input class="btn btn-primary mx-auto d-block " type="submit" name="" value="Log In">
+  </form>
+  <br/>
+</div>
+
+{% endblock %}
